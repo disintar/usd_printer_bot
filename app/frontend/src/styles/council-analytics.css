@@ -1,0 +1,116 @@
+.council-analytics-screen {
+  gap: 16px;
+}
+
+.council-analytics-card {
+  display: grid;
+  gap: 14px;
+}
+
+.council-analytics-head {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+.council-loader-mark {
+  animation: council-spin 1.25s linear infinite;
+}
+
+@keyframes council-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.council-progress-track {
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.council-progress-fill {
+  display: block;
+  width: 45%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--primary), var(--mint));
+  animation: council-loading 1.9s ease-in-out infinite;
+}
+
+@keyframes council-loading {
+  0% {
+    transform: translateX(-12%);
+  }
+
+  50% {
+    transform: translateX(92%);
+  }
+
+  100% {
+    transform: translateX(-12%);
+  }
+}
+
+.council-steps {
+  display: grid;
+  gap: 8px;
+}
+
+.council-wait-timer {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0 4px;
+}
+
+.council-wait-precise {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.03em;
+}
+
+.council-step-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.council-step-row .dot {
+  width: 7px;
+  height: 7px;
+}
+
+.council-step-row .dot.pulse {
+  animation: council-pulse 1s ease-in-out infinite;
+}
+
+@keyframes council-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.3);
+    opacity: 0.7;
+  }
+}
+
+.council-step-label {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.council-step-label.active {
+  color: var(--primary);
+}

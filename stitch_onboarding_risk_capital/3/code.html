@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aether Wallet - Set Your Strategy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-container": "#002c47",
+              "error-container": "#93000a",
+              "on-error-container": "#ffdad6",
+              "on-background": "#e5e2e1",
+              "on-secondary": "#303032",
+              "on-surface": "#e5e2e1",
+              "surface-tint": "#92ccff",
+              "outline": "#89929b",
+              "secondary-fixed-dim": "#c8c6c8",
+              "surface-container-lowest": "#0e0e0e",
+              "on-tertiary-fixed": "#002110",
+              "secondary": "#c8c6c8",
+              "surface-variant": "#353534",
+              "inverse-surface": "#e5e2e1",
+              "on-tertiary-container": "#00311a",
+              "surface-dim": "#131313",
+              "on-tertiary-fixed-variant": "#00522f",
+              "on-secondary-fixed-variant": "#474649",
+              "surface-container-highest": "#353534",
+              "on-secondary-fixed": "#1b1b1d",
+              "tertiary-container": "#00a665",
+              "on-secondary-container": "#b6b4b7",
+              "background": "#131313",
+              "surface-container": "#201f1f",
+              "tertiary": "#44e092",
+              "on-tertiary": "#00391f",
+              "tertiary-fixed-dim": "#44e092",
+              "surface-bright": "#3a3939",
+              "on-error": "#690005",
+              "primary": "#92ccff",
+              "secondary-fixed": "#e4e2e4",
+              "surface": "#131313",
+              "on-primary-fixed-variant": "#004b73",
+              "inverse-primary": "#006497",
+              "on-surface-variant": "#bfc7d2",
+              "tertiary-fixed": "#66fdac",
+              "on-primary": "#003351",
+              "primary-container": "#2b98dd",
+              "surface-container-low": "#1c1b1b",
+              "inverse-on-surface": "#313030",
+              "error": "#ffb4ab",
+              "primary-fixed": "#cce5ff",
+              "primary-fixed-dim": "#92ccff",
+              "secondary-container": "#474649",
+              "surface-container-high": "#2a2a2a",
+              "outline-variant": "#3f4850",
+              "on-primary-fixed": "#001d31"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .glass-card {
+        background: rgba(42, 42, 42, 0.4);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        min-height: max(884px, 100dvh);
+      }
+      /* Custom Slider Styling */
+      input[type=range] {
+        -webkit-appearance: none;
+        background: transparent;
+      }
+      input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 4px;
+        cursor: pointer;
+        background: #353534;
+        border-radius: 2px;
+      }
+      input[type=range]::-webkit-slider-thumb {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background: #92ccff;
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -8px;
+        box-shadow: 0 0 10px rgba(146, 204, 255, 0.4);
+      }
+      input[type=range]:focus::-webkit-slider-runnable-track {
+        background: #3f4850;
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col selection:bg-primary/30">
+<!-- Top Navigation -->
+<header class="bg-[#131313] flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-sm" style="font-variation-settings: 'FILL' 1;">cloud</span>
+</div>
+<span class="text-lg font-bold text-white font-headline tracking-tight">Aether</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="h-1.5 w-12 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-2/3 bg-primary rounded-full"></div>
+</div>
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Step 2 of 3</span>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center justify-center px-6 pt-24 pb-12 max-w-2xl mx-auto w-full">
+<!-- Editorial Hero Header -->
+<div class="w-full mb-10 text-left">
+<h1 class="font-headline font-extrabold text-5xl md:text-6xl text-white leading-tight tracking-tighter mb-4">
+                Set Your <span class="text-primary">Strategy</span>
+</h1>
+<p class="text-on-surface-variant text-lg max-w-md">
+                Configure your risk appetite and initial capital to let Aether AI build your sovereign gallery.
+            </p>
+</div>
+<!-- Risk Tolerance Section - Compact Layout -->
+<section class="w-full mb-10">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<h2 class="font-headline font-bold text-xl text-white">Risk Tolerance</h2>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Low Risk -->
+<button class="glass-card group flex items-center gap-4 p-4 rounded-xl border border-transparent hover:border-primary/20 transition-all duration-300 active:scale-[0.99] text-left">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex-shrink-0 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-xl">shield</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-base text-white">Low</h3>
+<p class="text-on-surface-variant text-[11px] leading-tight">Stable growth, minimal volatility. Blue-chips and stablecoins.</p>
+</div>
+</button>
+<!-- Medium Risk (Selected) -->
+<button class="bg-surface-container-high flex items-center gap-4 p-4 rounded-xl border border-primary/50 shadow-[0_0_20px_rgba(146,204,255,0.05)] relative overflow-hidden active:scale-[0.99] text-left">
+<div class="absolute top-3 right-3">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary/20 flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">balance</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-base text-white">Medium</h3>
+<p class="text-on-surface-variant text-[11px] leading-tight">Balanced exposure. Established leaders and L2 ecosystems.</p>
+</div>
+</button>
+<!-- High Risk -->
+<button class="glass-card group flex items-center gap-4 p-4 rounded-xl border border-transparent hover:border-primary/20 transition-all duration-300 active:scale-[0.99] text-left">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex-shrink-0 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-xl">trending_up</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-base text-white">High</h3>
+<p class="text-on-surface-variant text-[11px] leading-tight">Maximum growth. DeFi protocols and emerging meme-tech.</p>
+</div>
+</button>
+</div>
+</section>
+<!-- Investment Amount Section - With Slider -->
+<section class="w-full mb-10">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<h2 class="font-headline font-bold text-xl text-white">Investment Amount</h2>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-surface-variant/30">
+<div class="flex items-center justify-between gap-4 mb-8">
+<span class="text-4xl font-headline font-extrabold text-primary">$</span>
+<input class="w-full bg-transparent border-none text-5xl md:text-6xl font-headline font-extrabold text-white focus:ring-0 p-0 placeholder:text-surface-container-highest" placeholder="0" type="number" value="1000"/>
+</div>
+<!-- Range Slider -->
+<div class="px-2 mb-8">
+<input class="w-full h-1.5 bg-surface-container-highest rounded-full appearance-none cursor-pointer accent-primary" max="50000" min="100" step="100" type="range" value="1000"/>
+<div class="flex justify-between mt-2 text-[10px] font-label uppercase tracking-widest text-on-surface-variant/50">
+<span>Min $100</span>
+<span>Max $50k</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface text-xs font-medium hover:bg-primary hover:text-on-primary transition-all duration-200">
+                        $500
+                    </button>
+<button class="px-4 py-1.5 rounded-full bg-primary text-on-primary text-xs font-bold ring-2 ring-primary/20">
+                        $1k
+                    </button>
+<button class="px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface text-xs font-medium hover:bg-primary hover:text-on-primary transition-all duration-200">
+                        $5k
+                    </button>
+<button class="px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface text-xs font-medium hover:bg-primary hover:text-on-primary transition-all duration-200">
+                        $10k
+                    </button>
+</div>
+</div>
+</section>
+<!-- Action Section -->
+<div class="w-full flex flex-col gap-4">
+<button class="w-full py-5 rounded-full bg-gradient-to-r from-primary to-primary-container text-on-primary-container font-headline font-extrabold text-lg flex items-center justify-center gap-3 shadow-[0_20px_40px_rgba(43,152,221,0.2)] hover:opacity-90 active:scale-95 transition-all">
+                Generate Portfolio
+                <span class="material-symbols-outlined">auto_awesome</span>
+</button>
+<button class="w-full py-4 text-on-surface-variant font-label text-[10px] uppercase tracking-widest hover:text-white transition-colors">
+                Back to Personality Quiz
+            </button>
+</div>
+</main>
+<!-- Visual Background Flourishes -->
+<div class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden pointer-events-none">
+<div class="absolute -top-[10%] -right-[10%] w-[60%] h-[60%] bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="absolute -bottom-[10%] -left-[10%] w-[40%] h-[40%] bg-tertiary/5 rounded-full blur-[100px]"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-20" style="background-image: radial-gradient(#353534 1px, transparent 1px); background-size: 40px 40px;"></div>
+</div>
+</body></html>

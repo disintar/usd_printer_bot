@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aether Wallet - Advisor Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-container": "#002c47",
+                        "error-container": "#93000a",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e5e2e1",
+                        "on-secondary": "#303032",
+                        "on-surface": "#e5e2e1",
+                        "surface-tint": "#92ccff",
+                        "outline": "#89929b",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed": "#002110",
+                        "secondary": "#c8c6c8",
+                        "surface-variant": "#353534",
+                        "inverse-surface": "#e5e2e1",
+                        "on-tertiary-container": "#00311a",
+                        "surface-dim": "#131313",
+                        "on-tertiary-fixed-variant": "#00522f",
+                        "on-secondary-fixed-variant": "#474649",
+                        "surface-container-highest": "#353534",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "tertiary-container": "#00a665",
+                        "on-secondary-container": "#b6b4b7",
+                        "background": "#131313",
+                        "surface-container": "#201f1f",
+                        "tertiary": "#44e092",
+                        "on-tertiary": "#00391f",
+                        "tertiary-fixed-dim": "#44e092",
+                        "surface-bright": "#3a3939",
+                        "on-error": "#690005",
+                        "primary": "#92ccff",
+                        "secondary-fixed": "#e4e2e4",
+                        "surface": "#131313",
+                        "on-primary-fixed-variant": "#004b73",
+                        "inverse-primary": "#006497",
+                        "on-surface-variant": "#bfc7d2",
+                        "tertiary-fixed": "#66fdac",
+                        "on-primary": "#003351",
+                        "primary-container": "#2b98dd",
+                        "surface-container-low": "#1c1b1b",
+                        "inverse-on-surface": "#313030",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#cce5ff",
+                        "primary-fixed-dim": "#92ccff",
+                        "secondary-container": "#474649",
+                        "surface-container-high": "#2a2a2a",
+                        "outline-variant": "#3f4850",
+                        "on-primary-fixed": "#001d31"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(42, 42, 42, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #92ccff 0%, #2b98dd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 4px;
+            background: #3f4850;
+            border-radius: 2px;
+            outline: none;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: #92ccff;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid #131313;
+        }
+        .disabled-agent {
+            opacity: 0.4;
+            filter: grayscale(1);
+            pointer-events: none;
+        }
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+        }
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider-switch {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #3f4850;
+            transition: .3s;
+            border-radius: 24px;
+        }
+        .slider-switch:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .3s;
+            border-radius: 50%;
+        }
+        input:checked + .slider-switch {
+            background-color: #2b98dd;
+        }
+        input:checked + .slider-switch:before {
+            transform: translateX(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<nav class="bg-[#131313] dark:bg-[#131313] flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50 no-border">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-lg">account_circle</span>
+</div>
+<span class="font-['Plus_Jakarta_Sans'] font-bold text-sm tracking-tight text-white">0x71C...a29E</span>
+</div>
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[#92CCFF]">content_copy</span>
+</button>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 pb-40 px-6 max-w-2xl mx-auto w-full">
+<!-- Header Section -->
+<header class="mb-10">
+<h1 class="font-headline font-extrabold text-4xl mb-3 tracking-tight">Configure Your Team</h1>
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-md">Activate your preferred advisors and allocate their portfolio influence.</p>
+</header>
+<!-- Advisor List -->
+<div class="space-y-6">
+<!-- Advisor Card: Aria -->
+<div class="glass-card p-6 rounded-lg transition-all duration-300 ring-1 ring-inset ring-white/5 overflow-hidden">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="Aria" class="w-14 h-14 object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnHSZwnI5srqeO496u0N7cEksG6GS48qpKNi6eI8mO7cUdUvunyKjMYHBnraI3t9CpBtzBNbcUjwTw6ejtARqwys_sXtpHPjSXvEdHgxc2i_CyAf1RGy9vAx-OACHs9tO7bz1__BjwZ4qVjiDAKVEUzLck2H0RC0q6neGVOQOTF8avZRReBMGQawS5rZP1Comq66Bx_H-hwb9vG2JyI4SiRt82yydD2YddR4VwIH3fH9abrGKon6JMQptVyqPQBQ_4Xe-xUkQMxure"/>
+<div class="absolute -top-2 -right-2 bg-primary-container text-on-primary-container text-[8px] font-bold px-1.5 py-0.5 rounded-full uppercase">Value</div>
+</div>
+<div>
+<h3 class="font-headline font-bold text-lg">Aria</h3>
+<p class="text-on-surface-variant text-xs italic">Value Hunter</p>
+</div>
+</div>
+<label class="toggle-switch">
+<input checked="" onchange="this.closest('.glass-card').querySelector('.controls-section').classList.toggle('disabled-agent', !this.checked)" type="checkbox"/>
+<span class="slider-switch"></span>
+</label>
+</div>
+<div class="controls-section space-y-4 transition-all duration-300">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-medium">Allocation Weight</span>
+<span class="text-primary font-bold bg-primary/10 px-2 py-1 rounded">40% Weight</span>
+</div>
+<input class="w-full" max="100" min="0" type="range" value="40"/>
+<p class="text-on-surface-variant text-xs leading-snug">Focuses on high intrinsic potential assets for long-term stability.</p>
+</div>
+</div>
+<!-- Advisor Card: Kai -->
+<div class="glass-card p-6 rounded-lg transition-all duration-300 ring-1 ring-inset ring-white/5 overflow-hidden">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="Kai" class="w-14 h-14 object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmAtZm6c_Z-ATBh2UznM_kHMFif8kF7Pij2zezJ85NRV9NgjRFUw2thOGgtMDPiaSpQ7j4-WJDmtYkmi-GzJ2Jt46VsWtmfcipiDIpCJQIwxZ1zd7ebR9BN7Ujf_UqacTBjfb5flaWpsAjsTlVNQ1lfAgaOoq2rocuIFNltmtB_E43f-7Zl-qpvIqhrkSQAmmN1OKkk8IWPkwEhcaoS6erzuk1xXiP4EY5Wj0bALLwDHnK3c5xLkIy2R0dM-7JL02o6PO35KK0_sEP"/>
+<div class="absolute -top-2 -right-2 bg-tertiary-container text-on-tertiary-container text-[8px] font-bold px-1.5 py-0.5 rounded-full uppercase">Growth</div>
+</div>
+<div>
+<h3 class="font-headline font-bold text-lg">Kai</h3>
+<p class="text-on-surface-variant text-xs italic">Momentum Seeker</p>
+</div>
+</div>
+<label class="toggle-switch">
+<input checked="" onchange="this.closest('.glass-card').querySelector('.controls-section').classList.toggle('disabled-agent', !this.checked)" type="checkbox"/>
+<span class="slider-switch"></span>
+</label>
+</div>
+<div class="controls-section space-y-4 transition-all duration-300">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-medium">Allocation Weight</span>
+<span class="text-primary font-bold bg-primary/10 px-2 py-1 rounded">30% Weight</span>
+</div>
+<input class="w-full" max="100" min="0" type="range" value="30"/>
+<p class="text-on-surface-variant text-xs leading-snug">Targets high-velocity momentum and emerging market trends.</p>
+</div>
+</div>
+<!-- Advisor Card: Ren -->
+<div class="glass-card p-6 rounded-lg transition-all duration-300 ring-1 ring-inset ring-white/5 overflow-hidden disabled-agent">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="Ren" class="w-14 h-14 object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdJ_erq4l0gcCTmh2-eykGvpBqHfXjkS5z423NaDC13BvIeVzBQnj5BZrr0Ure38AewrdgDDXvJja4fnvsw1FbWjTIP3wc0bcm1j3OHGAhUwRFuT2ycGCVaYUcWgUkK8CSLTh4Y-akQAZpQnBRbMj2iKPfLzBIAqKdfrQPIz-fbzcUMJRBYUxDEGhWOaWEn1iyTyp6FlLqOekdiGRSubaSY2qkFhkgjsv1P_RD-cBVoC_iyAmmZW7yBL7DN_dZv1zlWh9fF1Dr6JlK"/>
+<div class="absolute -top-2 -right-2 bg-secondary-container text-on-secondary-container text-[8px] font-bold px-1.5 py-0.5 rounded-full uppercase">Contrarian</div>
+</div>
+<div>
+<h3 class="font-headline font-bold text-lg">Ren</h3>
+<p class="text-on-surface-variant text-xs italic">Rebel Mindset</p>
+</div>
+</div>
+<label class="toggle-switch">
+<input disabled="true" onchange="this.closest('.glass-card').querySelector('.controls-section').classList.toggle('disabled-agent', !this.checked)" type="checkbox"/>
+<span class="slider-switch"></span>
+</label>
+</div>
+<div class="controls-section disabled-agent space-y-4 transition-all duration-300">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-medium">Allocation Weight</span>
+<span class="text-primary font-bold bg-primary/10 px-2 py-1 rounded">0% Weight</span>
+</div>
+<input class="w-full" max="100" min="0" type="range" value="0"/>
+<p class="text-on-surface-variant text-xs leading-snug">Profits from market inefficiencies by betting against sentiment.</p>
+</div>
+</div>
+<!-- Advisor Card: Yuki -->
+<div class="glass-card p-6 rounded-lg transition-all duration-300 ring-1 ring-inset ring-white/5 overflow-hidden">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="Yuki" class="w-14 h-14 object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMoq_WLN-dvnrNQ5Q6sYFLsAL3GJxeOiaprNIA1t5pf7zjuBppkpQ68bkrkA7ZAnT6b4L123qkbhOncfDsjvF91S062LE7UJosC-Ux2NSF_gLx4GtkP8pkqmk9Qb-rP0L6o9lxuLMYR2qn2xN_NcAlrqmqT73_II7p1nuKzDWQO-GIIZy_YO8_VTCNsoJSWN14FrBhwVxYdyRyZsV6hAEvQjgWJJnL2tCk-r9_frx2XjNQVfgA7xqPMcy69PW6bJvyKBFsC1dV2l8E"/>
+<div class="absolute -top-2 -right-2 bg-surface-variant text-on-surface-variant text-[8px] font-bold px-1.5 py-0.5 rounded-full uppercase">Defensive</div>
+</div>
+<div>
+<h3 class="font-headline font-bold text-lg">Yuki</h3>
+<p class="text-on-surface-variant text-xs italic">Guardian</p>
+</div>
+</div>
+<label class="toggle-switch">
+<input checked="" onchange="this.closest('.glass-card').querySelector('.controls-section').classList.toggle('disabled-agent', !this.checked)" type="checkbox"/>
+<span class="slider-switch"></span>
+</label>
+</div>
+<div class="controls-section space-y-4 transition-all duration-300">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant font-medium">Allocation Weight</span>
+<span class="text-primary font-bold bg-primary/10 px-2 py-1 rounded">30% Weight</span>
+</div>
+<input class="w-full" max="100" min="0" type="range" value="30"/>
+<p class="text-on-surface-variant text-xs leading-snug">Prioritizes capital preservation and yield generation.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Fixed Bottom Action Area -->
+<div class="fixed bottom-0 left-0 w-full p-6 bg-gradient-to-t from-background via-background/90 to-transparent">
+<div class="max-w-2xl mx-auto">
+<div class="text-center mb-4 text-on-surface-variant text-sm font-medium">3/3 Advisors Selected</div><button class="w-full py-5 px-8 rounded-xl bg-gradient-to-r from-primary to-primary-container text-on-primary-container font-headline font-bold text-lg shadow-[0_8px_32px_rgba(146,204,255,0.3)] hover:scale-[1.02] active:scale-95 transition-all duration-200">
+                Confirm Team (100%)
+            </button>
+</div>
+</div>
+</body></html>

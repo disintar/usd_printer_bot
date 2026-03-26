@@ -1,0 +1,242 @@
+.welcome-screen {
+  gap: 18px;
+}
+
+.welcome-screen .screen-title {
+  font-size: 64px;
+  line-height: 0.96;
+  max-width: 360px;
+}
+
+.landing-topbar {
+  border-bottom: 0;
+  padding-top: 14px;
+}
+
+.landing-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.landing-brand-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  color: #041f30;
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+}
+
+.landing-brand-icon .material-symbols-outlined {
+  font-size: 14px;
+  font-variation-settings: "FILL" 1, "wght" 450, "GRAD" 0, "opsz" 20;
+}
+
+.landing-get-started {
+  width: auto;
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-size: 10px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  color: #15181f;
+  background: #f2f5fa;
+}
+
+.landing-hero {
+  gap: 14px;
+}
+
+.landing-intelligence {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 6px 12px;
+  border: 1px solid rgba(146, 204, 255, 0.28);
+  background: rgba(146, 204, 255, 0.08);
+  color: var(--primary);
+  font: 700 10px/1 "Plus Jakarta Sans", sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.landing-intelligence-dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+}
+
+.landing-intelligence-ping {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(146, 204, 255, 0.45);
+  animation: landing-ping 1.8s ease-out infinite;
+}
+
+.landing-intelligence-core {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+@keyframes landing-ping {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.85;
+  }
+
+  70% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.hero-copy {
+  margin: 0;
+  max-width: 336px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #b8c3d0;
+}
+
+.landing-primary-button {
+  width: 100%;
+  border-radius: 18px;
+  padding: 14px 20px;
+  margin-top: 4px;
+  background: #ffffff;
+  color: #111827;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  box-shadow: 0 14px 28px rgba(7, 10, 18, 0.45);
+}
+
+.landing-agents-card {
+  min-height: 72px;
+  border-radius: 22px;
+  border: 1px solid rgba(122, 152, 176, 0.34);
+  background: linear-gradient(100deg, rgba(20, 92, 132, 0.5), rgba(7, 118, 79, 0.38));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.landing-avatar-stack {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.landing-avatar-stack span {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 3px solid #04080f;
+  background: #3a3f4b;
+  color: #d8dde5;
+  font: 700 13px/1 "Plus Jakarta Sans", sans-serif;
+  letter-spacing: -0.04em;
+}
+
+.landing-avatar-stack span + span {
+  margin-left: -10px;
+}
+
+.landing-agents-label {
+  color: #a9b1bc;
+  font: 600 16px/1.2 "Inter", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.landing-feed {
+  gap: 10px;
+}
+
+.landing-feed .section-title {
+  font-size: 46px;
+}
+
+.landing-feed .screen-copy {
+  max-width: 330px;
+}
+
+.landing-feed-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.feed-card {
+  border-radius: 16px;
+  padding: 12px;
+  border: 1px solid rgba(96, 109, 127, 0.3);
+  background: rgba(23, 26, 33, 0.7);
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 10px;
+}
+
+.feed-card strong {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12px;
+}
+
+.feed-card .screen-copy {
+  margin: 4px 0 0;
+  font-size: 11px;
+}
+
+.feed-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+}
+
+.feed-icon .material-symbols-outlined {
+  font-size: 16px;
+}
+
+.feed-icon-primary {
+  background: rgba(146, 204, 255, 0.13);
+  color: var(--primary);
+}
+
+.feed-icon-mint {
+  background: rgba(68, 224, 146, 0.14);
+  color: var(--mint);
+}
+
+.landing-trust p {
+  margin: 0;
+  color: #8f9daf;
+  text-transform: uppercase;
+  letter-spacing: 0.17em;
+  font-size: 9px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.landing-trust .material-symbols-outlined {
+  font-size: 12px;
+}

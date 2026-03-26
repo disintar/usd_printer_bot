@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>xStocks | NVIDIA Asset Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary": "#ffb77a",
+                        "secondary-fixed-dim": "#aacae9",
+                        "secondary": "#aacae9",
+                        "outline-variant": "#3f4850",
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#333539",
+                        "on-tertiary-fixed-variant": "#6d3a00",
+                        "inverse-surface": "#e2e2e8",
+                        "surface-container": "#1e2024",
+                        "surface": "#111318",
+                        "surface-tint": "#92ccff",
+                        "surface-container-high": "#282a2e",
+                        "secondary-fixed": "#cce5ff",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-primary-container": "#002c47",
+                        "on-primary-fixed-variant": "#004b73",
+                        "primary": "#92ccff",
+                        "secondary-container": "#2c4c66",
+                        "on-secondary-container": "#9cbcda",
+                        "tertiary-fixed": "#ffdcc2",
+                        "on-primary": "#003351",
+                        "on-tertiary-container": "#432100",
+                        "background": "#111318",
+                        "inverse-primary": "#006497",
+                        "surface-container-lowest": "#0c0e12",
+                        "primary-fixed": "#cce5ff",
+                        "tertiary-container": "#d37b1e",
+                        "on-secondary": "#0f334c",
+                        "surface-bright": "#37393e",
+                        "surface-dim": "#111318",
+                        "tertiary-fixed-dim": "#ffb77a",
+                        "on-surface-variant": "#bfc7d2",
+                        "on-primary-fixed": "#001d31",
+                        "surface-variant": "#333539",
+                        "outline": "#89929b",
+                        "on-tertiary-fixed": "#2e1500",
+                        "surface-container-low": "#1a1c20",
+                        "primary-container": "#2b98dd",
+                        "on-secondary-fixed": "#001d31",
+                        "on-background": "#e2e2e8",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed-dim": "#92ccff",
+                        "on-secondary-fixed-variant": "#294a63",
+                        "inverse-on-surface": "#2f3035",
+                        "on-tertiary": "#4c2700",
+                        "on-surface": "#e2e2e8"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(51, 53, 57, 0.6);
+            backdrop-filter: blur(24px);
+        }
+        .glow-line {
+            box-shadow: 0 0 15px rgba(146, 204, 255, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface selection:bg-primary/30 min-h-screen">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-6 py-4 w-full sticky top-0 z-50 bg-[#1a1c20] dark:bg-[#1a1c20]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="arrow_back">arrow_back</span>
+<h1 class="font-['Plus_Jakarta_Sans'] text-xl font-bold tracking-tight text-on-surface dark:text-gray-100">xStocks</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex gap-6 mr-6">
+<span class="text-[#bfc7d2] hover:text-[#92ccff] transition-all cursor-pointer font-medium">Home</span>
+<span class="text-[#92ccff] font-semibold cursor-pointer">Invest</span>
+<span class="text-[#bfc7d2] hover:text-[#92ccff] transition-all cursor-pointer font-medium">Trade</span>
+<span class="text-[#bfc7d2] hover:text-[#92ccff] transition-all cursor-pointer font-medium">Settings</span>
+</div>
+<div class="bg-surface-container-high px-4 py-1.5 rounded-full text-on-surface-variant text-sm font-mono border border-outline-variant/15">
+                0x...4f2a
+            </div>
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="professional male headshot with clean lighting and blurred office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl0mol3MH0zRFwFLREUje3DRGYLZ5Cr-id1CXaeiuODr_mTzv3YJJVUJZxLRYHHXzyc42727MFFAT3JlRyVyxPmsubGotKzcR8_5WA_N2NicyCzGcofGeJPM5yzzBFBSssogUNMfJMcKhU2zyBvptzFHoDpzKOTLLsw5qNfa33tDKRr71nSphdW5sdylfwHh1Tuhq4z2fXT3iVnTUDUMxOrfOYF2bNW_6tpjrXlDCmyQP1q4RLl8im5JeTCSzFf_-vh8XbJ8zZbW6y"/>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 pt-8 pb-32">
+<!-- Asset Hero Section: Asymmetric Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12 items-end">
+<div class="lg:col-span-2">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-16 h-16 rounded-2xl bg-white p-3 flex items-center justify-center shadow-lg">
+<img class="w-full object-contain" data-alt="minimalist tech logo with geometric circuit patterns on a clean white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1KBLENeQZ94Zleg0FulvA2SKbyrOOV4E_0NSpwY5N-9rnYQSc4POX1fmsty1YKTxruG8ODf6IhCvaSGYupggDVSTiNFRn4nmrg9PblkQQwNbEYmOKKdwBGtgrZkkIyLdUE85Ai5EMs-PgJfj3gOaEgWaGY6x801u1yvuZhfM_xxtqza8uq13GoCKI9YzIsd2qF99a39GbIMZIupRaG-167qoyANVOOQsbO0_RTgPpAQt54IuCwjDmPAU8kDDypD5WzTjlR6b2kAuh"/>
+</div>
+<div>
+<h2 class="text-display-md text-4xl font-extrabold tracking-tight text-on-surface">NVIDIA Corp.</h2>
+<span class="text-on-surface-variant font-medium tracking-widest uppercase text-sm">NASDAQ: NVDA</span>
+</div>
+</div>
+<div class="flex items-baseline gap-4 mt-6">
+<span class="text-5xl md:text-7xl font-bold tracking-tighter text-on-surface">$4,930.00</span>
+<div class="flex items-center text-primary bg-primary-container/10 px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="trending_up">trending_up</span>
+<span class="font-bold text-lg">+12.4%</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="h-24 w-full bg-surface-container-low rounded-lg p-4 relative overflow-hidden">
+<div class="absolute inset-0 flex items-end px-2 pb-2 opacity-40">
+<div class="w-full h-12 bg-gradient-to-t from-primary/20 to-transparent"></div>
+</div>
+<!-- Sparkline Simulation -->
+<svg class="absolute bottom-4 left-0 w-full h-12" preserveaspectratio="none">
+<path class="glow-line" d="M0 40 Q 50 10, 100 35 T 200 15 T 300 30 T 400 5" fill="none" stroke="#92ccff" stroke-width="2.5"></path>
+</svg>
+<span class="relative z-10 text-xs text-on-surface-variant font-medium uppercase tracking-tighter">7D Performance</span>
+</div>
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary-container font-bold py-4 rounded-full text-lg shadow-xl active:scale-95 transition-all">
+                    Execute Trade
+                </button>
+</div>
+</div>
+<!-- Fundamental Council Marks: The Data Ledger -->
+<section class="mb-12">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-2xl font-bold tracking-tight text-on-surface">Fundamental Council Marks</h3>
+<span class="text-on-surface-variant text-sm font-medium">Last updated: 4m ago</span>
+</div>
+<div class="bg-surface-container-low rounded-xl overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high/50">
+<th class="px-8 py-5 text-on-surface-variant text-xs font-bold uppercase tracking-widest">AI Analyst Agent</th>
+<th class="px-8 py-5 text-on-surface-variant text-xs font-bold uppercase tracking-widest">Execution Mark</th>
+<th class="px-8 py-5 text-on-surface-variant text-xs font-bold uppercase tracking-widest hidden md:table-cell">Primary Thesis</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="px-8 py-8">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="smart_toy">smart_toy</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Warren Buffett Bot</p>
+<p class="text-xs text-on-surface-variant">Value Assessment Module</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-8">
+<span class="bg-primary/10 text-primary border border-primary/20 px-6 py-2 rounded-full font-bold text-sm">BUY</span>
+</td>
+<td class="px-8 py-8 hidden md:table-cell">
+<p class="text-on-surface-variant text-sm max-w-xs italic">"Exceptional competitive moat sustained by proprietary architecture and vertical integration."</p>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-8 py-8">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Cathie Wood AI</p>
+<p class="text-xs text-on-surface-variant">Disruptive Growth Engine</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-8">
+<span class="bg-primary/10 text-primary border border-primary/20 px-6 py-2 rounded-full font-bold text-sm">BUY</span>
+</td>
+<td class="px-8 py-8 hidden md:table-cell">
+<p class="text-on-surface-variant text-sm max-w-xs italic">"Exponential AI compute demand creates a multi-decade scaling vector for enterprise infrastructure."</p>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-8 py-8">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="balance">balance</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Peter Lynch AI</p>
+<p class="text-xs text-on-surface-variant">Fundamental Growth Matrix</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-8">
+<span class="bg-surface-container-high text-on-surface-variant border border-outline-variant/20 px-6 py-2 rounded-full font-bold text-sm">HOLD</span>
+</td>
+<td class="px-8 py-8 hidden md:table-cell">
+<p class="text-on-surface-variant text-sm max-w-xs italic">"Asset exhibits legendary characteristics but P/E ratios suggest entering a cycle of consolidation."</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- AI Reasoning Section -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-surface-container-high/40 p-8 rounded-xl border border-outline-variant/10 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-9xl" data-icon="psychology">psychology</span>
+</div>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="verified_user">verified_user</span>
+<h4 class="text-lg font-bold text-on-surface">AI Reasoning: Warren Buffett Bot</h4>
+</div>
+<div class="space-y-4 relative z-10">
+<p class="text-on-surface-variant leading-relaxed">
+                        NVIDIA displays a classic "Economic Moat" through its CUDA software ecosystem, which renders competitor hardware virtually unusable for current enterprise AI pipelines. The margin profile (70%+) is consistent with historical dominant monopolies. 
+                    </p>
+<div class="flex items-center gap-2 pt-4">
+<div class="w-1 h-1 rounded-full bg-primary"></div>
+<span class="text-xs font-bold text-primary tracking-widest uppercase">Verdict: Fundamental Value Buy</span>
+</div>
+</div>
+</div>
+<!-- Bento Card: Risk Signals -->
+<div class="bg-surface-container p-8 rounded-xl border border-outline-variant/10">
+<h4 class="text-lg font-bold text-on-surface mb-6">Risk Sentiment Signals</h4>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between text-xs mb-2">
+<span class="text-on-surface-variant font-medium">Regulatory Pressure</span>
+<span class="text-error font-bold">High</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-error h-full w-[85%] rounded-full"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs mb-2">
+<span class="text-on-surface-variant font-medium">Institutional Liquidity</span>
+<span class="text-primary font-bold">Strong</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[92%] rounded-full"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs mb-2">
+<span class="text-on-surface-variant font-medium">Supply Chain Volatility</span>
+<span class="text-tertiary font-bold">Moderate</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[45%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-[#111318]/60 backdrop-blur-3xl rounded-t-[3rem] shadow-[0px_-24px_48px_rgba(0,0,0,0.4)] md:hidden">
+<div class="flex flex-col items-center justify-center text-[#bfc7d2] px-6 py-2 transition-all active:scale-90">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium tracking-wide">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#2b98dd] text-white rounded-full px-6 py-2 transition-all active:scale-90 shadow-lg">
+<span class="material-symbols-outlined mb-1" data-icon="analytics" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium tracking-wide">Invest</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#bfc7d2] px-6 py-2 transition-all active:scale-90">
+<span class="material-symbols-outlined mb-1" data-icon="swap_horiz">swap_horiz</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium tracking-wide">Trade</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#bfc7d2] px-6 py-2 transition-all active:scale-90">
+<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium tracking-wide">Settings</span>
+</div>
+</nav>
+<!-- Floating Action Button: Contextual Buy (Only on Desktop) -->
+<div class="hidden md:block fixed bottom-8 right-8 z-50">
+<button class="bg-primary text-on-primary w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-3xl" data-icon="add_shopping_cart" style="font-variation-settings: 'FILL' 1;">add_shopping_cart</span>
+</button>
+</div>
+</body></html>

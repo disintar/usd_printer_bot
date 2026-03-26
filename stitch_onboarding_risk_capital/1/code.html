@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#44e092",
+              "surface-dim": "#0a0a0a",
+              "outline-variant": "#2a2a2a",
+              "on-surface-variant": "#a1a1aa",
+              "surface-variant": "#1c1c1c",
+              "on-primary-container": "#e0f2fe",
+              "on-secondary-container": "#b6b4b7",
+              "surface-bright": "#1a1a1a",
+              "on-primary-fixed": "#001d31",
+              "tertiary": "#10b981",
+              "secondary-container": "#27272a",
+              "on-secondary-fixed": "#1b1b1d",
+              "error-container": "#93000a",
+              "secondary": "#a1a1aa",
+              "secondary-fixed-dim": "#c8c6c8",
+              "tertiary-fixed": "#66fdac",
+              "on-primary-fixed-variant": "#004b73",
+              "surface-container": "#121212",
+              "on-tertiary-fixed": "#002110",
+              "on-error": "#690005",
+              "on-background": "#fafafa",
+              "inverse-on-surface": "#18181b",
+              "primary": "#38bdf8",
+              "surface-container-low": "#0f0f0f",
+              "primary-fixed": "#cce5ff",
+              "on-secondary": "#18181b",
+              "secondary-fixed": "#e4e2e4",
+              "outline": "#3f3f46",
+              "on-tertiary-container": "#ecfdf5",
+              "on-surface": "#f4f4f5",
+              "inverse-primary": "#006497",
+              "error": "#ef4444",
+              "surface": "#050505",
+              "surface-container-highest": "#27272a",
+              "on-tertiary": "#064e3b",
+              "surface-container-high": "#18181b",
+              "primary-fixed-dim": "#92ccff",
+              "surface-tint": "#38bdf8",
+              "on-secondary-fixed-variant": "#474649",
+              "background": "#050505",
+              "primary-container": "#0369a1",
+              "on-primary": "#082f49",
+              "on-tertiary-fixed-variant": "#00522f",
+              "surface-container-lowest": "#050505",
+              "on-error-container": "#fee2e2",
+              "tertiary-container": "#065f46",
+              "inverse-surface": "#fafafa"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.75rem", "lg": "1.25rem", "xl": "2rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #050505;
+        color: #f4f4f5;
+        -webkit-font-smoothing: antialiased;
+      }
+      .glow-effect {
+        position: relative;
+      }
+      .glow-effect::after {
+        content: '';
+        position: absolute;
+        inset: -1px;
+        background: linear-gradient(45deg, transparent, rgba(56, 189, 248, 0.3), transparent);
+        z-index: -1;
+        border-radius: inherit;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .glow-effect:hover::after {
+        opacity: 1;
+      }
+      .mesh-gradient {
+        background-image: 
+          radial-gradient(at 0% 0%, hsla(200,100%,15%,1) 0, transparent 50%), 
+          radial-gradient(at 100% 0%, hsla(160,100%,15%,1) 0, transparent 50%);
+      }
+    </style>
+</head>
+<body class="font-body selection:bg-primary/30 selection:text-white">
+<!-- Header Shell -->
+<header class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/5 bg-black/20">
+<div class="flex justify-between items-center h-20 px-6 max-w-7xl mx-auto">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary-container flex items-center justify-center shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white text-2xl" data-icon="account_balance_wallet" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+</div>
+<span class="text-xl font-bold text-white tracking-tight font-headline">Personal Fund</span>
+</div>
+<div class="hidden md:flex gap-8 text-sm font-medium text-zinc-400">
+<a class="hover:text-white transition-colors" href="#">Council</a>
+<a class="hover:text-white transition-colors" href="#">Intelligence</a>
+<a class="hover:text-white transition-colors" href="#">Security</a>
+</div>
+<button class="bg-white text-black px-6 py-2 rounded-full font-headline font-bold text-sm hover:bg-zinc-200 transition-all active:scale-95 duration-200">
+            Get Started
+        </button>
+</div>
+</header>
+<main class="relative min-h-screen pt-32 pb-24 px-6 overflow-hidden mesh-gradient">
+<!-- Hero Section -->
+<div class="max-w-7xl mx-auto flex flex-col items-center">
+<section class="text-center mb-24 max-w-5xl relative z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold tracking-widest uppercase mb-8 animate-pulse">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+                Institutional Intelligence
+            </div>
+<h1 class="font-headline text-5xl md:text-8xl font-extrabold tracking-tight text-white mb-8 leading-[1.05] drop-shadow-sm">
+                Trade xStocks On-chain with your <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-400 to-tertiary">Elite Council of AI Agents</span>
+</h1>
+<p class="font-body text-xl md:text-2xl text-zinc-400 font-light leading-relaxed max-w-3xl mx-auto mb-12">
+                Your sovereign Personal Fund performs deep fundamental analysis across global markets, powered by an elite council of specialized AI agents.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+<button class="group relative bg-white text-black px-10 py-5 rounded-2xl font-headline font-extrabold text-xl transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-[0_0_40px_rgba(56,189,248,0.2)]">
+                    Assemble Your Council
+                </button>
+<div class="flex items-center gap-4 px-6 py-3 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
+<div class="flex -space-x-3">
+<div class="w-8 h-8 rounded-full bg-zinc-800 border-2 border-black flex items-center justify-center text-[10px] font-bold">AI1</div>
+<div class="w-8 h-8 rounded-full bg-zinc-700 border-2 border-black flex items-center justify-center text-[10px] font-bold">AI2</div>
+<div class="w-8 h-8 rounded-full bg-zinc-600 border-2 border-black flex items-center justify-center text-[10px] font-bold">AI3</div>
+</div>
+<span class="text-sm font-medium text-zinc-400">1,240+ Agents Active</span>
+</div>
+</div>
+</section>
+<!-- Institutional Data Grid -->
+<section class="w-full max-w-6xl relative z-10">
+<div class="flex items-end justify-between mb-10">
+<div>
+<h2 class="font-headline text-2xl font-bold text-white">Council Data Feed</h2>
+<p class="text-zinc-500 text-sm mt-1">Real-time fundamental signals analyzed by your agents.</p>
+</div>
+<div class="text-xs font-mono text-zinc-600 uppercase tracking-widest hidden md:block">
+                    Status: <span class="text-tertiary">Synchronized</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Financial Statements -->
+<div class="glow-effect group bg-zinc-900/40 backdrop-blur-sm border border-white/5 p-6 rounded-2xl flex flex-col gap-5 hover:border-primary/30 transition-all duration-500">
+<div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="account_balance">account_balance</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-zinc-100 text-base mb-1">Financial Statements</h3>
+<p class="font-body text-xs text-zinc-500 leading-relaxed">Cross-referenced core fundamental data with historical variance analysis.</p>
+</div>
+</div>
+<!-- SEC Filings -->
+<div class="glow-effect group bg-zinc-900/40 backdrop-blur-sm border border-white/5 p-6 rounded-2xl flex flex-col gap-5 hover:border-tertiary/30 transition-all duration-500">
+<div class="w-10 h-10 rounded-xl bg-tertiary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary" data-icon="description">description</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-zinc-100 text-base mb-1">SEC Filings</h3>
+<p class="font-body text-xs text-zinc-500 leading-relaxed">Instant parsing of 10-Ks, 10-Qs, and 8-Ks for non-obvious risk disclosures.</p>
+</div>
+</div>
+<!-- Company News -->
+<div class="glow-effect group bg-zinc-900/40 backdrop-blur-sm border border-white/5 p-6 rounded-2xl flex flex-col gap-5 hover:border-primary/30 transition-all duration-500">
+<div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="newspaper">newspaper</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-zinc-100 text-base mb-1">Company News</h3>
+<p class="font-body text-xs text-zinc-500 leading-relaxed">Global sentiment mapping across 50,000+ verified news sources.</p>
+</div>
+</div>
+<!-- Segmented Financials -->
+<div class="glow-effect group bg-zinc-900/40 backdrop-blur-sm border border-white/5 p-6 rounded-2xl flex flex-col gap-5 hover:border-tertiary/30 transition-all duration-500">
+<div class="w-10 h-10 rounded-xl bg-tertiary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary" data-icon="pie_chart">pie_chart</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-zinc-100 text-base mb-1">Segmented Financials</h3>
+<p class="font-body text-xs text-zinc-500 leading-relaxed">Deep-dive into business unit performance and geographic revenue shifts.</p>
+</div>
+</div>
+<!-- Institutional Ownership -->
+<div class="glow-effect group bg-zinc-900/40 backdrop-blur-sm border border-white/5 p-6 rounded-2xl flex flex-col gap-5 hover:border-tertiary/30 transition-all duration-500">
+<div class="w-10 h-10 rounded-xl bg-tertiary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary" data-icon="groups">groups</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-zinc-100 text-base mb-1">Institutional Ownership</h3>
+<p class="font-body text-xs text-zinc-500 leading-relaxed">Tracking 13F filings to map elite fund manager accumulation patterns.</p>
+</div>
+</div>
+<!-- Financial Metrics -->
+<div class="glow-effect group bg-zinc-900/40 backdrop-blur-sm border border-white/5 p-6 rounded-2xl flex flex-col gap-5 hover:border-primary/30 transition-all duration-500">
+<div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="monitoring">monitoring</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-zinc-100 text-base mb-1">Financial Metrics</h3>
+<p class="font-body text-xs text-zinc-500 leading-relaxed">Dynamic calculation of P/E, PEG, and proprietary Council-only ratios.</p>
+</div>
+</div>
+<!-- Insider Trades -->
+<div class="glow-effect group bg-zinc-900/40 backdrop-blur-sm border border-white/5 p-6 rounded-2xl flex flex-col gap-5 hover:border-tertiary/30 transition-all duration-500">
+<div class="w-10 h-10 rounded-xl bg-tertiary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary" data-icon="person_search">person_search</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-zinc-100 text-base mb-1">Insider Trades</h3>
+<p class="font-body text-xs text-zinc-500 leading-relaxed">Identifying predictive buying signals from C-suite executives.</p>
+</div>
+</div>
+<!-- Analyst Estimates -->
+<div class="glow-effect group bg-zinc-900/40 backdrop-blur-sm border border-white/5 p-6 rounded-2xl flex flex-col gap-5 hover:border-primary/30 transition-all duration-500">
+<div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="insights">insights</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-zinc-100 text-base mb-1">Analyst Estimates</h3>
+<p class="font-body text-xs text-zinc-500 leading-relaxed">Consensus vs. Agent projections to find alpha in market surprises.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Footer -->
+<section class="mt-24 text-center">
+<p class="font-body text-xs text-zinc-600 flex items-center justify-center gap-2 uppercase tracking-widest">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                Sovereign. Private. Institutional Grade.
+            </p>
+</section>
+</div>
+<!-- Background Orbs -->
+<div class="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-primary/10 rounded-full blur-[160px] pointer-events-none"></div>
+<div class="absolute bottom-0 -right-1/4 w-1/2 h-1/2 bg-tertiary/10 rounded-full blur-[160px] pointer-events-none"></div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 bg-[#050505] border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 max-w-7xl mx-auto gap-12">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm" data-icon="account_balance_wallet" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+</div>
+<span class="text-lg font-bold text-white font-headline tracking-tight">Personal Fund</span>
+</div>
+<p class="font-body text-xs text-zinc-600">© 2024 Personal Fund. The Sovereign Asset Protocol.</p>
+</div>
+<nav class="flex gap-12">
+<div class="flex flex-col gap-3">
+<span class="text-[10px] font-bold text-zinc-700 uppercase tracking-[0.2em] mb-2">Protocol</span>
+<a class="text-sm text-zinc-500 hover:text-white transition-colors" href="#">Architecture</a>
+<a class="text-sm text-zinc-500 hover:text-white transition-colors" href="#">Nodes</a>
+<a class="text-sm text-zinc-500 hover:text-white transition-colors" href="#">Docs</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-[10px] font-bold text-zinc-700 uppercase tracking-[0.2em] mb-2">Social</span>
+<a class="text-sm text-zinc-500 hover:text-white transition-colors" href="#">Twitter / X</a>
+<a class="text-sm text-zinc-500 hover:text-white transition-colors" href="#">Telegram</a>
+<a class="text-sm text-zinc-500 hover:text-white transition-colors" href="#">Discord</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-[10px] font-bold text-zinc-700 uppercase tracking-[0.2em] mb-2">Legal</span>
+<a class="text-sm text-zinc-500 hover:text-white transition-colors" href="#">Privacy</a>
+<a class="text-sm text-zinc-500 hover:text-white transition-colors" href="#">Terms</a>
+</div>
+</nav>
+</div>
+</footer>
+</body></html>

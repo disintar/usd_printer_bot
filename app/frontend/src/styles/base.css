@@ -1,0 +1,414 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;700;800&family=Material+Symbols+Outlined:wght@300;400;600&display=swap");
+
+:root {
+  color-scheme: dark;
+  --bg: #0b0d12;
+  --bg-soft: #13161d;
+  --surface: rgba(30, 32, 37, 0.9);
+  --surface-strong: #2a2d35;
+  --surface-soft: #1a1c22;
+  --line: rgba(191, 199, 210, 0.14);
+  --text: #e8edf5;
+  --muted: #a9b2bf;
+  --primary: #92ccff;
+  --primary-strong: #2b98dd;
+  --mint: #44e092;
+  --amber: #ffb77a;
+  --danger: #ff8f8f;
+  --shadow: 0 18px 42px rgba(0, 0, 0, 0.36);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overscroll-behavior: none;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background:
+    radial-gradient(circle at 16% 6%, rgba(43, 152, 221, 0.15), transparent 35%),
+    radial-gradient(circle at 90% 80%, rgba(68, 224, 146, 0.12), transparent 34%),
+    linear-gradient(180deg, #090b10 0%, #0e1118 52%, #0a0d14 100%);
+  color: var(--text);
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#root::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-variation-settings: "FILL" 0, "wght" 350, "GRAD" 0, "opsz" 24;
+  font-size: 18px;
+  line-height: 1;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+}
+
+input {
+  border: 0;
+  outline: 0;
+  color: inherit;
+  background: none;
+}
+
+.app-root {
+  position: relative;
+  min-height: 100dvh;
+  max-width: 430px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, rgba(11, 13, 18, 0.95), rgba(12, 15, 21, 0.98));
+  overflow: hidden;
+}
+
+.app-shell {
+  position: relative;
+  min-height: 100dvh;
+  padding: 0 16px 96px;
+}
+
+.app-root.telegram-ios-top-inset .app-shell {
+  padding-top: max(env(safe-area-inset-top, 0px), 12px);
+}
+
+.app-main {
+  display: grid;
+  gap: 22px;
+  padding-top: 20px;
+}
+
+.shell-actions {
+  position: fixed;
+  top: 14px;
+  right: max(calc((100vw - 430px) / 2 + 16px), 16px);
+  z-index: 80;
+}
+
+.app-root.telegram-ios-top-inset .shell-actions {
+  top: calc(max(env(safe-area-inset-top, 0px), 12px) + 14px);
+}
+
+.ambient {
+  position: fixed;
+  pointer-events: none;
+  filter: blur(80px);
+  opacity: 0.75;
+}
+
+.ambient-left {
+  top: 42px;
+  left: -84px;
+  width: 220px;
+  height: 250px;
+  background: rgba(43, 152, 221, 0.24);
+}
+
+.ambient-right {
+  right: -90px;
+  bottom: 60px;
+  width: 200px;
+  height: 240px;
+  background: rgba(68, 224, 146, 0.16);
+}
+
+.screen,
+.stack,
+.advisor-list,
+.chip-row,
+.summary-list,
+.asset-list {
+  display: grid;
+  gap: 14px;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 13px 14px;
+  margin: 0 -16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(10, 12, 17, 0.76);
+  backdrop-filter: blur(18px);
+}
+
+.compact-topbar {
+  min-height: 60px;
+}
+
+.brand-row,
+.inline-row,
+.summary-head,
+.asset-main,
+.advisor-row,
+.advisor-identity,
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-head,
+.summary-head {
+  justify-content: space-between;
+}
+
+.brand-mark,
+.icon-badge,
+.asset-logo,
+.advisor-avatar,
+.action-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+  color: #002c47;
+  font: 800 13px/1 "Plus Jakarta Sans", sans-serif;
+}
+
+.brand-mark.round {
+  border-radius: 50%;
+}
+
+.brand-mark.tiny {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+}
+
+.brand-copy strong,
+.brand-inline,
+.screen-title,
+.hero-value,
+.section-title,
+.asset-title,
+.summary-percent {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.brand-copy strong {
+  display: block;
+  font-size: 14px;
+}
+
+.brand-copy span,
+.muted,
+.asset-subtle,
+.screen-copy,
+.summary-copy,
+.advisor-description {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.screen-title {
+  margin: 0;
+  font-size: 51px;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.screen-title .accent {
+  color: var(--primary);
+}
+
+.section-title {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+}
+
+.screen-card,
+.hero-balance,
+.advisor-tile,
+.asset-item,
+.summary-item,
+.marks-row,
+.council-card,
+.spark-card {
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow);
+}
+
+.screen-card,
+.summary-item,
+.marks-row,
+.council-card {
+  padding: 16px;
+}
+
+.hero-balance {
+  padding: 24px 18px;
+  text-align: center;
+}
+
+.hero-balance.editorial {
+  border-radius: 32px;
+}
+
+.hero-value {
+  margin: 0;
+  font-size: 58px;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.loading-pill,
+.status-pill,
+.signal-pill,
+.chip,
+.address-pill,
+.step-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  padding: 6px 11px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.signal-pill.buy {
+  color: var(--primary);
+}
+
+.signal-pill.hold {
+  color: var(--amber);
+}
+
+.signal-pill.sell {
+  color: var(--danger);
+}
+
+.chip {
+  font-size: 9px;
+}
+
+.advisor-inline-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  color: var(--primary);
+  background: rgba(146, 204, 255, 0.12);
+}
+
+.cta-button,
+.ghost-button {
+  width: 100%;
+  border-radius: 999px;
+  padding: 16px 18px;
+  font-weight: 800;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.cta-button {
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+  color: #082f49;
+}
+
+.cta-button:disabled {
+  opacity: 0.5;
+}
+
+.ghost-button {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.ghost-button.compact {
+  width: auto;
+  padding: 9px 14px;
+  font-size: 12px;
+}
+
+.ghost-link {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 10px;
+}
+
+.icon-button {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  display: grid;
+  place-items: center;
+  color: var(--primary);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--primary);
+  box-shadow: 0 0 12px rgba(146, 204, 255, 0.8);
+}
+
+.center {
+  justify-content: center;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.error-banner {
+  padding: 12px 14px;
+  border-radius: 16px;
+  position: sticky;
+  top: 70px;
+  z-index: 65;
+  background: rgba(147, 0, 10, 0.35);
+  color: #ffe2df;
+}

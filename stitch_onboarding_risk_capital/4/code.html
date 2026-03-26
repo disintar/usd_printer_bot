@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio Breakdown</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #131313;
+        }
+        .headline-font {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "on-primary-container": "#002c47",
+                "error-container": "#93000a",
+                "on-error-container": "#ffdad6",
+                "on-background": "#e5e2e1",
+                "on-secondary": "#303032",
+                "on-surface": "#e5e2e1",
+                "surface-tint": "#92ccff",
+                "outline": "#89929b",
+                "secondary-fixed-dim": "#c8c6c8",
+                "surface-container-lowest": "#0e0e0e",
+                "on-tertiary-fixed": "#002110",
+                "secondary": "#c8c6c8",
+                "surface-variant": "#353534",
+                "inverse-surface": "#e5e2e1",
+                "on-tertiary-container": "#00311a",
+                "surface-dim": "#131313",
+                "on-tertiary-fixed-variant": "#00522f",
+                "on-secondary-fixed-variant": "#474649",
+                "surface-container-highest": "#353534",
+                "on-secondary-fixed": "#1b1b1d",
+                "tertiary-container": "#00a665",
+                "on-secondary-container": "#b6b4b7",
+                "background": "#131313",
+                "surface-container": "#201f1f",
+                "tertiary": "#44e092",
+                "on-tertiary": "#00391f",
+                "tertiary-fixed-dim": "#44e092",
+                "surface-bright": "#3a3939",
+                "on-error": "#690005",
+                "primary": "#92ccff",
+                "secondary-fixed": "#e4e2e4",
+                "surface": "#131313",
+                "on-primary-fixed-variant": "#004b73",
+                "inverse-primary": "#006497",
+                "on-surface-variant": "#bfc7d2",
+                "tertiary-fixed": "#66fdac",
+                "on-primary": "#003351",
+                "primary-container": "#2b98dd",
+                "surface-container-low": "#1c1b1b",
+                "inverse-on-surface": "#313030",
+                "error": "#ffb4ab",
+                "primary-fixed": "#cce5ff",
+                "primary-fixed-dim": "#92ccff",
+                "secondary-container": "#474649",
+                "surface-container-high": "#2a2a2a",
+                "outline-variant": "#3f4850",
+                "on-primary-fixed": "#001d31"
+              },
+              fontFamily: {
+                "headline": ["Plus Jakarta Sans"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- Top Navigation Shell -->
+<header class="bg-[#131313] flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant/20">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="close-up of a high-tech minimalist profile avatar in a digital interface, soft blue glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcxuUujYHYspRP00ipB6Cio2bAgaOGw_sWshbnzY43zeVfxMvYz0ugTuagO88JDCUlAX4moxlf4f9L-A2Vwfr2JeEPHuzxauvFEEMNfGVb6RA33ghDxFYz9hPDepvj4qtOpwrf9KqL0zwZQRa28goM82c8FiTVme7ZKj11TYXeBSUkGJWY0zV_S50jO_Zqu49TqhriTz_tOS7aPablRYVLmA5DSePIxJ9WC9aKrvqalNuQzsJ4C8Po-_xbY4xL0fx9n8MaDQ2N07r-"/>
+</div>
+<span class="font-headline font-bold text-sm tracking-tight text-white">0x71C...a29E</span>
+</div>
+<button class="text-primary hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="content_copy">content_copy</span>
+</button>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto">
+<!-- Header Section -->
+<section class="mb-10">
+<h1 class="font-headline font-extrabold text-4xl tracking-tight mb-2 text-white">Your Optimized Portfolio</h1>
+<p class="text-on-surface-variant font-body text-sm">Tailored by your selected AI council for maximum stability and growth.</p>
+</section>
+<!-- Portfolio Visualization (Bento Grid Style) -->
+<section class="grid grid-cols-1 gap-4 mb-10">
+<div class="bg-surface-container-high rounded-xl p-8 overflow-hidden relative group">
+<!-- Decorative Glow -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-[100px]"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-end mb-8">
+<div>
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Asset Distribution</span>
+<div class="font-headline font-bold text-3xl mt-1 text-white">Target Allocation</div>
+</div>
+<div class="text-tertiary flex items-center gap-1 font-headline font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>+12.4% Est.</span>
+</div>
+</div>
+<!-- Horizontal Distribution Bar -->
+<div class="flex h-12 w-full rounded-full overflow-hidden bg-surface-container-lowest mb-6">
+<div class="h-full bg-primary-container flex items-center justify-center text-[10px] font-bold text-on-primary-container" style="width: 40%">BTC</div>
+<div class="h-full bg-primary flex items-center justify-center text-[10px] font-bold text-on-primary" style="width: 30%">ETH</div>
+<div class="h-full bg-tertiary flex items-center justify-center text-[10px] font-bold text-on-tertiary" style="width: 20%">SOL</div>
+<div class="h-full bg-surface-variant flex items-center justify-center text-[10px] font-bold text-white" style="width: 10%">CASH</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary-container"></div>
+<span class="text-xs font-medium text-on-surface-variant">40% Bitcoin</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="text-xs font-medium text-on-surface-variant">30% Ethereum</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<span class="text-xs font-medium text-on-surface-variant">20% Solana</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-surface-variant"></div>
+<span class="text-xs font-medium text-on-surface-variant">10% Stable</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Agent Breakdown -->
+<section class="space-y-4">
+<h2 class="font-headline font-bold text-xl mb-6 text-white px-2">Active Agent Council</h2>
+<!-- Agent Card 1 -->
+<div class="bg-surface-container-low rounded-lg p-5 flex items-start gap-4 hover:bg-surface-container transition-colors">
+<div class="relative">
+<div class="w-14 h-14 rounded-2xl overflow-hidden bg-surface-container-highest border border-outline-variant/10">
+<img alt="Aria" class="w-full h-full object-cover" data-alt="anime style portrait of a futuristic female AI with soft blue neon hair and ethereal digital features, close-up, studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdlS8T1XmPmMqdsZfGWfbarKrF_FGcPtudGR21O6d4V1QZmYY9RfC0nlNCmSDtY4XyIuLYcDn1YHzR6Wy3Ime9R1UlmPQX1PgqbjxG7Z2RjNQ7nJJcx-F5LR1kvXhgypbP6EjzhDsxTYO3Mno_XfOlAbNStSAlHrW7Rky11FKEPIvkBdVBUZIgaCkiQ9KgOloDETE4JayIqpJfIpL3mdjpfoLRlbXj6nkig-Wg0Q02WaJc__lwIQOnbhIuTEsVjVlmDQzTaov7OJb9"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-primary text-on-primary text-[8px] font-bold px-1.5 py-0.5 rounded-full">CORE</div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline font-bold text-lg text-white">Aria</h3>
+<span class="font-headline font-bold text-primary">45% Allocation</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-3 font-body italic">"Accumulating BTC during the current structural accumulation phase to maximize long-term delta."</p>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5 bg-surface-container-lowest px-3 py-1 rounded-full border border-outline-variant/10">
+<span class="text-[10px] uppercase font-bold text-on-surface-variant">7D Forecast</span>
+<span class="text-[10px] font-bold text-tertiary">+4.2%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Agent Card 2 -->
+<div class="bg-surface-container-low rounded-lg p-5 flex items-start gap-4 hover:bg-surface-container transition-colors">
+<div class="w-14 h-14 rounded-2xl overflow-hidden bg-surface-container-highest border border-outline-variant/10">
+<img alt="Nexus" class="w-full h-full object-cover" data-alt="anime style portrait of a sleek cybernetic male AI with glowing emerald accents and tech glasses, digital art style, high contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC35FeqpKCO_zTwBOd0K3jkaB4l2IvlHJ5faXLb55xyTdZoPFv7D9mjhDPhe2WFNmgpOewFXLYgPJdkaN3w-AKN5z4wieDwWX2HLqT8mjwaJYIOpC08WHze5mXU-IRh9exCJ4i73mOKmjZL8w-eCOoZrlDrIWe558FyXr0p2SL8aF04qROXdwZwJhkrb-5CjcSi-CD3x1o8EyHTH5Ocem5kPlLR2Pf3KW6_wa3ExfzkF6O_hIrnJWhhyOuo4qJBOo_Rco1Qcj7GvS3-"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline font-bold text-lg text-white">Nexus</h3>
+<span class="font-headline font-bold text-primary">35% Allocation</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-3 font-body italic">"Optimizing yield through ETH liquid staking while maintaining high liquidity for volatility capture."</p>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5 bg-surface-container-lowest px-3 py-1 rounded-full border border-outline-variant/10">
+<span class="text-[10px] uppercase font-bold text-on-surface-variant">7D Forecast</span>
+<span class="text-[10px] font-bold text-tertiary">+6.8%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Agent Card 3 -->
+<div class="bg-surface-container-low rounded-lg p-5 flex items-start gap-4 hover:bg-surface-container transition-colors">
+<div class="w-14 h-14 rounded-2xl overflow-hidden bg-surface-container-highest border border-outline-variant/10">
+<img alt="Nova" class="w-full h-full object-cover" data-alt="anime style portrait of a mysterious AI figure with purple energy flowing from their eyes, celestial background, digital aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdLZEA5j5xfa8wpcyk3E5Blpc6WOQ_ecTfE09L4j8J4Am1ZB8Cz2iQVxmV7p1ArWs_JG8wHIR6-88If8TpJv5EHw4sFj4bn42W2Kk7YlrJqeDKD8lcm1t8tHbI4WWh_GYi6akeO5Lc27KFTsDDW-cDKf_HPZIIzIUjOAzT_RddfGuJ4ZaQbcJftOuxIy5trcO4u4Lmmy6RGuKvgLa4RBVBURUKqtsZXCC97C85xS4zORdKJ3aMId3GBAX1SbshtrfM71Gxd_0wVDFB"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline font-bold text-lg text-white">Nova</h3>
+<span class="font-headline font-bold text-primary">20% Allocation</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-3 font-body italic">"Aggressively targeting high-beta SOL ecosystem plays to capitalize on current network growth."</p>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5 bg-surface-container-lowest px-3 py-1 rounded-full border border-outline-variant/10">
+<span class="text-[10px] uppercase font-bold text-on-surface-variant">7D Forecast</span>
+<span class="text-[10px] font-bold text-tertiary">+15.2%</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Fixed Action Bar -->
+<div class="fixed bottom-0 left-0 w-full p-6 bg-gradient-to-t from-background via-background/95 to-transparent z-40">
+<button class="w-full py-5 bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-extrabold text-lg rounded-xl shadow-[0_10px_30px_rgba(43,152,221,0.3)] hover:scale-[1.02] active:scale-95 transition-all">
+            Activate &amp; Deposit
+        </button>
+</div>
+<!-- Bottom Navigation Shell (From JSON) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-[#131313]/80 backdrop-blur-xl z-50 rounded-t-[3rem] shadow-[0_-8px_40px_rgba(0,0,0,0.5)] md:hidden">
+<a class="flex flex-col items-center justify-center text-gray-500 p-3 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-['Inter'] font-medium text-[10px] uppercase tracking-widest">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#92CCFF] bg-[#2A2A2A] rounded-full p-3 transition-all scale-100" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="trending_up">trending_up</span>
+<span class="font-['Inter'] font-medium text-[10px] uppercase tracking-widest">Invest</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 p-3 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="swap_horiz">swap_horiz</span>
+<span class="font-['Inter'] font-medium text-[10px] uppercase tracking-widest">Swap</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 p-3 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+<span class="font-['Inter'] font-medium text-[10px] uppercase tracking-widest">Settings</span>
+</a>
+</nav>
+</body></html>

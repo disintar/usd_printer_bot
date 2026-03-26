@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#ffb77a",
+              "surface-container-lowest": "#0c0e12",
+              "surface-container": "#1e2024",
+              "on-secondary-fixed": "#001d31",
+              "primary": "#92ccff",
+              "on-secondary-container": "#9cbcda",
+              "on-tertiary-container": "#432100",
+              "secondary": "#aacae9",
+              "on-primary-fixed": "#001d31",
+              "primary-fixed-dim": "#92ccff",
+              "surface-tint": "#92ccff",
+              "background": "#111318",
+              "surface-container-high": "#282a2e",
+              "on-secondary": "#0f334c",
+              "error": "#ffb4ab",
+              "on-primary": "#003351",
+              "tertiary-fixed": "#ffdcc2",
+              "on-primary-container": "#002c47",
+              "secondary-fixed-dim": "#aacae9",
+              "primary-fixed": "#cce5ff",
+              "on-primary-fixed-variant": "#004b73",
+              "secondary-container": "#2c4c66",
+              "inverse-surface": "#e2e2e8",
+              "primary-container": "#2b98dd",
+              "error-container": "#93000a",
+              "on-tertiary-fixed-variant": "#6d3a00",
+              "on-secondary-fixed-variant": "#294a63",
+              "outline-variant": "#3f4850",
+              "tertiary": "#ffb77a",
+              "on-error-container": "#ffdad6",
+              "on-tertiary-fixed": "#2e1500",
+              "tertiary-container": "#d37b1e",
+              "on-surface-variant": "#bfc7d2",
+              "surface-variant": "#333539",
+              "outline": "#89929b",
+              "on-background": "#e2e2e8",
+              "inverse-on-surface": "#2f3035",
+              "surface-container-low": "#1a1c20",
+              "on-surface": "#e2e2e8",
+              "secondary-fixed": "#cce5ff",
+              "surface-container-highest": "#333539",
+              "on-error": "#690005",
+              "surface-bright": "#37393e",
+              "surface": "#111318",
+              "on-tertiary": "#4c2700",
+              "inverse-primary": "#006497",
+              "surface-dim": "#111318"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #111318; color: #e2e2e8; }
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+      .glass-card { background: rgba(30, 32, 36, 0.6); backdrop-filter: blur(24px); }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#111318] flex justify-between items-center px-6 h-16 max-w-md mx-auto left-0 right-0">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant/20">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Portrait of a sophisticated AI agent with sleek glowing blue circuitry patterns on a minimalist dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLZz8qmKvCaGlRfZ180Ic20_h2EAUfmsfLzG6D8-LcIfgcC83vLj58Hf3qdut3ubVWI_E3DHUn8EZ3OF-E0GUlboxhhjPnfEzVg0S-3aytJ4RFZ1lfWI-VkRgwYf4oE1HRu8EWsOD7H7pn9DutYIxruxbX7oMZxpsGrsLfEAmjqWwYtRmCq07mfiicB2hpjl7uMFtTRKtZsGRZkwOMRkKHJ293IUmLafAATctMejxx1H3dTPWu1A1_dbRjdU0mKcLbo9QjysBWp6G1"/>
+</div>
+<span class="text-xl font-extrabold text-[#92ccff] tracking-tighter">xStocks</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-full hover:bg-[#1e2024] transition-colors active:scale-95 duration-200 cursor-pointer">
+<span class="font-['Plus_Jakarta_Sans'] font-bold text-sm tracking-tight text-[#92ccff]">0x...4f2e</span>
+<span class="material-symbols-outlined text-sm text-[#92ccff]">content_copy</span>
+</div>
+</nav>
+<main class="max-w-md mx-auto pt-20 px-6 space-y-8">
+<!-- Network Switcher (Editorial Style) -->
+<div class="flex justify-center">
+<div class="bg-surface-container-low p-1 rounded-full flex items-center">
+<button class="px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest bg-primary text-on-primary shadow-lg transition-all">ONCHAIN</button>
+<button class="px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-all">TEST</button>
+</div>
+</div>
+<!-- Hero Balance Section -->
+<section class="text-center space-y-2">
+<p class="text-on-surface-variant font-medium text-sm tracking-wide">Total Balance</p>
+<h1 class="text-5xl md:text-6xl font-extrabold tracking-tighter text-on-surface">$12,450.00</h1>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 bg-primary/10 rounded-full">
+<span class="material-symbols-outlined text-primary text-sm font-bold">trending_up</span>
+<span class="text-primary font-bold text-sm">+5.4% / +$640.00</span>
+</div>
+</section>
+<!-- Main Actions -->
+<section class="grid grid-cols-3 gap-4">
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-[0px_8px_24px_rgba(146,204,255,0.3)] group-active:scale-90 transition-all duration-300">
+<span class="material-symbols-outlined text-2xl">north_east</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Transfer</span>
+</button>
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-14 h-14 rounded-full bg-surface-container-highest flex items-center justify-center text-primary group-active:scale-90 transition-all duration-300">
+<span class="material-symbols-outlined text-2xl">add</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Deposit</span>
+</button>
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-14 h-14 rounded-full bg-surface-container-highest flex items-center justify-center text-primary group-active:scale-90 transition-all duration-300">
+<span class="material-symbols-outlined text-2xl">swap_horiz</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Trade</span>
+</button>
+</section>
+<!-- AI Agents Carousel (Editorial Card Layout) -->
+<section class="space-y-4">
+<div class="flex justify-between items-end px-1">
+<h2 class="text-xl font-bold text-on-surface tracking-tight">Fundamental AI Agents</h2>
+<div class="flex items-center gap-3"><button class="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-0.5 rounded">3/3 ACTIVE</button><button class="text-[10px] font-bold text-on-surface-variant hover:text-primary uppercase tracking-widest transition-colors">Change</button></div>
+</div>
+<div class="flex gap-4 overflow-x-auto no-scrollbar -mx-6 px-6">
+<!-- Buffett Bot -->
+<div class="min-w-[240px] bg-surface-container-low p-6 rounded-xl space-y-4 hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 rounded-full bg-tertiary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-tertiary/10 text-tertiary uppercase tracking-tighter">Value Strategy</span>
+</div>
+<div>
+<h3 class="font-bold text-lg text-on-surface">Buffett Bot</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">Analyzing cash flow and intrinsic moat values.</p>
+</div>
+<div class="pt-2 flex items-center justify-between border-t border-outline-variant/10">
+<span class="text-[10px] uppercase font-bold text-on-surface-variant">PnL (7D)</span>
+<span class="text-sm font-bold text-primary">+3.2%</span>
+</div>
+</div>
+<!-- Cathie AI -->
+<div class="min-w-[240px] bg-surface-container-low p-6 rounded-xl space-y-4 hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+</div>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-primary/10 text-primary uppercase tracking-tighter">Growth Strategy</span>
+</div>
+<div>
+<h3 class="font-bold text-lg text-on-surface">Cathie AI</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">Scanning for disruptive innovation &amp; tech scale.</p>
+</div>
+<div class="pt-2 flex items-center justify-between border-t border-outline-variant/10">
+<span class="text-[10px] uppercase font-bold text-on-surface-variant">PnL (7D)</span>
+<span class="text-sm font-bold text-primary">+8.7%</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Assets Section -->
+<section class="space-y-4">
+<div class="flex justify-between items-end px-1">
+<h2 class="text-xl font-bold text-on-surface tracking-tight">Portfolio Assets</h2>
+<span class="material-symbols-outlined text-on-surface-variant text-xl">filter_list</span>
+</div>
+<div class="space-y-2">
+<!-- Asset: Tesla -->
+<div class="bg-surface-container flex items-center justify-between p-4 rounded-xl hover:bg-surface-container-high transition-all cursor-pointer active:scale-[0.98] duration-200">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-white flex items-center justify-center p-2.5">
+<img alt="Tesla" class="w-full h-full object-contain" data-alt="Tesla corporate logo with distinctive red T symbol on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHW9TwkiiIBwGCwLvEfvDxqMK8FebaIhGGRNFg9jbvrItGi0L-ZJrvzzcKfRV48ikNhH11YqZ2H6qHp6-iWPu0SLA0RhJ3a0c5Lpyxl-xVI4ywUrzHjErJ8xfYfQ7CPg6X7Ur9-mNcvC90kKPTZmgDXbaS6Z3gXsMkm5PkQaAP_n9Etv03fq3eRqhvoBuUcu6Eohb9cezu0Hw7ube6kU4Z8K1s2d3jKbY90a14qK45ASJqadjrUjXEotq8N94yAPsHs-BSpyGTatpk"/>
+</div>
+<div><div class="flex items-center gap-2"><h4 class="font-bold text-on-surface">Tesla</h4><span class="text-[9px] font-black px-1.5 py-0.5 rounded-sm bg-primary/20 text-primary border border-primary/30">BUY</span></div><p class="text-xs text-on-surface-variant">12.4 TSLA</p></div>
+</div>
+<div class="text-right"><div class="flex items-center gap-2"><h4 class="font-bold text-on-surface">Tesla</h4><span class="text-[9px] font-black px-1.5 py-0.5 rounded-sm bg-primary/20 text-primary border border-primary/30">BUY</span></div><p class="text-xs text-on-surface-variant">12.4 TSLA</p></div>
+</div>
+<!-- Asset: Nvidia -->
+<div class="bg-surface-container flex items-center justify-between p-4 rounded-xl hover:bg-surface-container-high transition-all cursor-pointer active:scale-[0.98] duration-200">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-white flex items-center justify-center p-2.5">
+<img alt="Nvidia" class="w-full h-full object-contain" data-alt="Nvidia corporate logo with green eye symbol on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnJPvZsPZESAoenHcU6PbYz5yhfw6izEf5LHXSzajp7GUa_47fvdcTCJsxddRfUvkmx67CHYvdkVqaaSWAHb_4vW34iBN33n_gQQieGpzadSIBxFXq-biUAbTjO9DoPfMd4jSVdRqpFWnU26AoOTdXhwy4YnwQs4EmAfu8krjoksor8Kueze11hYA5iWF2V9hHuTFeCztYs_OK5E22hkVx1vwWyyw6O2xdm0zzv3F6_nFE0cfy4zulkX-tUiBoVNgeB_loXDaaoRoM"/>
+</div>
+<div><div class="flex items-center gap-2"><h4 class="font-bold text-on-surface">Nvidia</h4><span class="text-[9px] font-black px-1.5 py-0.5 rounded-sm bg-primary/20 text-primary border border-primary/30">BUY</span></div><p class="text-xs text-on-surface-variant">5.8 NVDA</p></div>
+</div>
+<div class="text-right"><div class="flex items-center gap-2"><h4 class="font-bold text-on-surface">Nvidia</h4><span class="text-[9px] font-black px-1.5 py-0.5 rounded-sm bg-primary/20 text-primary border border-primary/30">BUY</span></div><p class="text-xs text-on-surface-variant">5.8 NVDA</p></div>
+</div>
+<!-- Asset: Apple -->
+<div class="bg-surface-container flex items-center justify-between p-4 rounded-xl hover:bg-surface-container-high transition-all cursor-pointer active:scale-[0.98] duration-200">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-white flex items-center justify-center p-2.5">
+<img alt="Apple" class="w-full h-full object-contain" data-alt="Apple corporate logo silhouette on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhu5X22r4-UwcmRfB-EshhIKe9y9PyJtHp91jEFRM9faMyNso6s73UydgiUtbADQAj2Qx49kYegvO9U-ItKwtBQaKzg1A3Dp7FMY2OlE8SRrtCdtlqERvmLSZ7bsicxyO26nZNhEa8ZS3vQSSJqG2iq9G5pQIcdM2LxN2yn7VFD_-xlPiiIPpfOefv9DLzyYK3EVdxq9L9rztVYznoDHZrOhCxFBdxAwUsBRr5MgLUt7iXuOsAW5ck9Js82DNOOH9ycHQInWI9FA06"/>
+</div>
+<div><div class="flex items-center gap-2"><h4 class="font-bold text-on-surface">Apple</h4><span class="text-[9px] font-black px-1.5 py-0.5 rounded-sm bg-tertiary/20 text-tertiary border border-tertiary/30">HOLD</span></div><p class="text-xs text-on-surface-variant">15.0 AAPL</p></div>
+</div>
+<div class="text-right"><div class="flex items-center gap-2"><h4 class="font-bold text-on-surface">Apple</h4><span class="text-[9px] font-black px-1.5 py-0.5 rounded-sm bg-tertiary/20 text-tertiary border border-tertiary/30">HOLD</span></div><p class="text-xs text-on-surface-variant">15.0 AAPL</p></div>
+</div>
+<!-- Asset: Alphabet -->
+<div class="bg-surface-container flex items-center justify-between p-4 rounded-xl hover:bg-surface-container-high transition-all cursor-pointer active:scale-[0.98] duration-200"><div class="flex items-center gap-2"><h4 class="font-bold text-on-surface">Apple</h4><span class="text-[9px] font-black px-1.5 py-0.5 rounded-sm bg-tertiary/20 text-tertiary border border-tertiary/30">HOLD</span></div><p class="text-xs text-on-surface-variant">15.0 AAPL</p></div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-8 pt-4 bg-[#111318]/60 backdrop-blur-3xl z-50 rounded-t-[3rem] shadow-[0px_-8px_24px_rgba(0,0,0,0.4)] max-w-md mx-auto right-0">
+<a class="flex flex-col items-center justify-center text-[#92ccff] bg-[#1e2024] rounded-full px-5 py-2 transition-all active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#bfc7d2] px-5 py-2 hover:text-white transition-all active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">trending_up</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Invest</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#bfc7d2] px-5 py-2 hover:text-white transition-all active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">swap_horiz</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Trade</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#bfc7d2] px-5 py-2 hover:text-white transition-all active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Settings</span>
+</a>
+</nav>
+</body></html>

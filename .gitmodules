@@ -1,0 +1,6 @@
+[submodule "external/ai-hedge-fund"]
+	path = external/ai-hedge-fund
+	url = git@github.com:disintar/ai-hedge-fund.git
+[submodule "external/financial-modeling-prep-mcp-server"]
+	path = external/financial-modeling-prep-mcp-server
+	url = https://github.com/imbenrabi/financial-modeling-prep-mcp-server

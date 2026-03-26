@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dbablo</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f4efe6;
+        --text: #1f1b16;
+        --accent: #cb5f31;
+        --panel: #fffaf4;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: Georgia, serif;
+        background:
+          radial-gradient(circle at top left, rgba(203, 95, 49, 0.18), transparent 30%),
+          linear-gradient(135deg, var(--bg), #efe6d8);
+        color: var(--text);
+      }
+
+      main {
+        width: min(720px, calc(100% - 32px));
+        background: rgba(255, 250, 244, 0.92);
+        border: 1px solid rgba(31, 27, 22, 0.08);
+        border-radius: 24px;
+        padding: 40px;
+        box-shadow: 0 24px 80px rgba(31, 27, 22, 0.08);
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(2.2rem, 5vw, 4rem);
+      }
+
+      p {
+        margin: 0;
+        line-height: 1.6;
+        font-size: 1.05rem;
+      }
+
+      code {
+        color: var(--accent);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>dbablo</h1>
+      <p>Django scaffold is up. Start building from <code>core/views.py</code> and <code>templates/</code>.</p>
+    </main>
+  </body>
+</html>

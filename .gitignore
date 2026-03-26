@@ -1,0 +1,44 @@
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.sqlite3
+.env
+.env.*
+!.env.example
+!.env.*.example
+.python-version
+.DS_Store
+staticfiles/
+.idea/
+.vscode/
+node_modules/
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Test / coverage
+.coverage
+.coverage.*
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
